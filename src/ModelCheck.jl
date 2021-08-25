@@ -7,7 +7,9 @@ import
     Random,
     StatsModels,
     StatsBase,
-    Statistics
+    Statistics,
+    LinearAlgebra,
+    LinRegOutliers
     
 # Separate .jl files for each function (have to manually add file, otherwise error)
 
