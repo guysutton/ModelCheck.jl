@@ -59,7 +59,7 @@ function plot_residual_fitted(;model, df, y)
 
         # Calculate Pearson residuals
         #PearsResids = (resids ./ seResp) ./ 10
-        
+
         ###################################################
         # - Plot residual vs fitted plot
         ###################################################
@@ -71,12 +71,14 @@ function plot_residual_fitted(;model, df, y)
             y = PearsResids,
             Gadfly.layer(Gadfly.Geom.point),
             Gadfly.layer(Gadfly.Geom.smooth(method = :loess,
-                                            smoothing = 0.9)),
+                                            smoothing = 0.9,
+                                            color=Colors.colorant"red")),
             # Add horizontal y = 0 line
             #Gadfly.layer(yintercept = [0],
             #             Gadfly.Geom.hline),
             # Change plot aesthetics   
             Gadfly.Scale.x_continuous(format=:plain),
+            Gadfly.Scale.y_continuous(format=:plain),
             Gadfly.Guide.xlabel("Fitted values", orientation=:horizontal),
             Gadfly.Guide.ylabel("Pearson residuals"),
             Gadfly.Guide.title("Residuals vs Fitted"))
@@ -114,12 +116,14 @@ function plot_residual_fitted(;model, df, y)
             y = devResids,
             Gadfly.layer(Gadfly.Geom.point),
             Gadfly.layer(Gadfly.Geom.smooth(method = :loess,
-                                            smoothing = 0.9)),
+                                            smoothing = 0.9,
+                                            color=colorant"red")),
             # Add horizontal y = 0 line
             #Gadfly.layer(yintercept = [0],
             #             Gadfly.Geom.hline),
             # Change plot aesthetics
             Gadfly.Scale.x_continuous(format=:plain),
+            Gadfly.Scale.y_continuous(format=:plain),
             Gadfly.Guide.xlabel("Fitted values", orientation=:horizontal),
             Gadfly.Guide.ylabel("Deviance residuals"),
             Gadfly.Guide.title("Residuals vs Fitted"))

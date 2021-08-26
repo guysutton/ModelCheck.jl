@@ -109,8 +109,10 @@ function plot_scale_location(;model, df, y)
             y = sqrPearResids,
             Gadfly.layer(Gadfly.Geom.point),
             Gadfly.layer(Gadfly.Geom.smooth(method = :loess,
-                                            smoothing = 0.9)),
+                                            smoothing = 0.9,
+                                            color=Colors.colorant"red")),
             # Change plot aesthetics
+            Gadfly.Scale.x_continuous(format=:plain),
             Gadfly.Guide.title("Scale-Location"),
             Gadfly.Guide.xlabel("Fitted values",
                                 orientation=:horizontal),
@@ -191,8 +193,10 @@ function plot_scale_location(;model, df, y)
             y = sqrDevResids,
             Gadfly.layer(Gadfly.Geom.point),
             Gadfly.layer(Gadfly.Geom.smooth(method = :loess,
-                                            smoothing = 0.9)),
+                                            smoothing = 0.9,
+                                            color=Colors.colorant"red")),
             # Change plot aesthetics
+            Gadfly.Scale.x_continuous(format=:plain),
             Gadfly.Guide.title("Scale-Location"),
             Gadfly.Guide.xlabel("Fitted values",
                                 orientation=:horizontal),
