@@ -10,8 +10,8 @@ function plot_model_check(;model, df, y)
     # Set Gadfly theme  
     default_theme = Gadfly.Theme(
         panel_fill = nothing,
-        #highlight_width = [0 Measures.mm],
-        #point_size = 0.8pt,
+        highlight_width = 0Gadfly.pt,
+        point_size = 0.8Gadfly.mm,
         key_position = :inside,
         #grid_line_width = [0 Measures.mm],
         panel_stroke = Colors.colorant"black",

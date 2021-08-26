@@ -15,8 +15,8 @@ function plot_residual_fitted(;model, df, y)
     # Set Gadfly theme  
     default_theme = Gadfly.Theme(
         panel_fill = nothing,
-        #highlight_width = [0 Measures.mm],
-        #point_size = 0.8pt,
+        highlight_width = 0Gadfly.pt,
+        point_size = 0.8Gadfly.mm,
         key_position = :inside,
         #grid_line_width = [0 Measures.mm],
         panel_stroke = Colors.colorant"black",
@@ -75,7 +75,8 @@ function plot_residual_fitted(;model, df, y)
             # Add horizontal y = 0 line
             #Gadfly.layer(yintercept = [0],
             #             Gadfly.Geom.hline),
-            # Change plot aesthetics
+            # Change plot aesthetics   
+            Gadfly.Scale.x_continuous(format=:plain),
             Gadfly.Guide.xlabel("Fitted values", orientation=:horizontal),
             Gadfly.Guide.ylabel("Pearson residuals"),
             Gadfly.Guide.title("Residuals vs Fitted"))
@@ -118,6 +119,7 @@ function plot_residual_fitted(;model, df, y)
             #Gadfly.layer(yintercept = [0],
             #             Gadfly.Geom.hline),
             # Change plot aesthetics
+            Gadfly.Scale.x_continuous(format=:plain),
             Gadfly.Guide.xlabel("Fitted values", orientation=:horizontal),
             Gadfly.Guide.ylabel("Deviance residuals"),
             Gadfly.Guide.title("Residuals vs Fitted"))
