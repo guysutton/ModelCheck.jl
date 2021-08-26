@@ -22,4 +22,8 @@ export calc_deviance_resids
 include("plot_qq.jl")
 export plot_qq
 
+# Function #3: Plot residual vs fitted plot
+include("plot_res_fit.jl")
+export plot_res_fit
+
 end

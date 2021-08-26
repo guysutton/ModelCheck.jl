@@ -92,9 +92,8 @@ function plot_qq(;model, df, y)
         # Define quantiles
         qx = Distributions.quantile.(Distributions.Normal(),
                                         Base.range(0.5,
-                                        stop = (nResp .- 0.5),
-                                        length = (nResp))    
-                                    ./ (nResp .+ 1))
+                                                  stop = (nResp .- 0.5),
+                                                  length = (nResp)) ./ (nResp .+ 1))
 
         ###################################################
         # - Plot qqplot
