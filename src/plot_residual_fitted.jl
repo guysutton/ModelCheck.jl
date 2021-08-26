@@ -46,7 +46,7 @@ function plot_residual_fitted(;model, df, y)
         resp = df[!, y]
 
         # Calculate raw residuals 
-        resids = resp .- pred
+        PearsResids = resp .- pred
 
         # Calculate standard deviation of observed value
         sdResp = Statistics.std(resp)
@@ -55,11 +55,11 @@ function plot_residual_fitted(;model, df, y)
         nResp = Base.length(resp)
 
         # Calculate standard error of response
-        seResp = sdResp ./ Base.sqrt.(nResp)
+        #seResp = sdResp ./ Base.sqrt.(nResp)
 
         # Calculate Pearson residuals
-        PearsResids = (resids ./ seResp) ./ 10
-
+        #PearsResids = (resids ./ seResp) ./ 10
+        
         ###################################################
         # - Plot residual vs fitted plot
         ###################################################

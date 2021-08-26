@@ -16,7 +16,7 @@ function plot_qqplot(;model, df, y)
     default_theme = Gadfly.Theme(
         panel_fill = nothing,
         highlight_width = 0Gadfly.pt,
-        #point_size = 0.8,
+        point_size = 0.8Gadfly.mm,
         key_position = :inside,
         #grid_line_width = 0,
         panel_stroke = Colors.colorant"black",
