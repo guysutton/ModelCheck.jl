@@ -103,13 +103,14 @@ function plot_qqplot(;model, df, y)
         p = Gadfly.plot(
             # Add points layer
             Gadfly.layer(x = qx,
-                        y = Base.sort(StdPearsResids),
-                        Gadfly.Geom.point),
+                         y = Base.sort(StdPearsResids),
+                         Gadfly.Geom.point),
             # Add 1:1 line
             Gadfly.layer(x = [-3,3],
-                        y = [-3,3],
-                        Gadfly.Geom.line,
-                        Gadfly.style(line_style = [:dot])),
+                         y = [-3,3],
+                         Gadfly.Geom.line,
+                         color=[Colors.colorant"red"],
+                         Gadfly.style(line_style = [:dot])),
             # Change plot aesthetics
             Gadfly.Guide.title("Normal Q-Q plot"),
             Gadfly.Guide.xlabel("Theoretical Quantiles"),
@@ -181,13 +182,14 @@ function plot_qqplot(;model, df, y)
         p = Gadfly.plot(
                         # Add points layer
                         Gadfly.layer(x = qx,
-                                    y = sort(StdDevResids),
-                                    Gadfly.Geom.point),
+                                     y = sort(StdDevResids),
+                                     Gadfly.Geom.point),
                         # Add 1:1 line
                         Gadfly.layer(x = [-3,3],
-                                    y = [-3,3],
-                                    Gadfly.Geom.line,
-                                    Gadfly.style(line_style = [:dot])),
+                                     y = [-3,3],
+                                     Gadfly.Geom.line,
+                                     color=[Colors.colorant"red"],
+                                     Gadfly.style(line_style = [:dot])),
                         # Change plot aesthetics
                         Gadfly.Guide.title("Normal Q-Q plot"),
                         Gadfly.Guide.xlabel("Theoretical Quantiles"),

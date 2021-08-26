@@ -69,10 +69,10 @@ function plot_residual_fitted(;model, df, y)
             # Add points layer
             x = pred,
             y = PearsResids,
-            Gadfly.layer(Gadfly.Geom.point),
             Gadfly.layer(Gadfly.Geom.smooth(method = :loess,
                                     smoothing = 0.9),
                                     color=[Colors.colorant"red"]),
+            Gadfly.layer(Gadfly.Geom.point),
             # Add horizontal y = 0 line
             Gadfly.layer(yintercept = [0],
             Gadfly.Geom.hline(style = :dash)),
@@ -114,10 +114,10 @@ function plot_residual_fitted(;model, df, y)
             # Add points layer
             x = pred,
             y = devResids,
-            Gadfly.layer(Gadfly.Geom.point),
             Gadfly.layer(Gadfly.Geom.smooth(method = :loess,
                                     smoothing = 0.9),
                                     color=[Colors.colorant"red"]),
+            Gadfly.layer(Gadfly.Geom.point),
             # Add horizontal y = 0 line
             Gadfly.layer(yintercept = [0],
             Gadfly.Geom.hline(style = :dash)),
