@@ -9,13 +9,17 @@ import
     StatsBase,
     Statistics,
     LinearAlgebra,
-    LinRegOutliers
+    LinRegOutliers,
+    Colors
     
 # Separate .jl files for each function (have to manually add file, otherwise error)
 
-# Function #1: Calculate unstandardised deviance residuals for fitted linear model object
-include("calc_resid_deviance.jl")
-export calc_resid_deviance
+# Function #1: Calculate deviance residuals
+include("calc_deviance_resids.jl")
+export calc_deviance_resids
 
+# Function #2: Plot quantile-quantile plot
+include("plot_qq.jl")
+export plot_qq
 
 end

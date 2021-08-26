@@ -1,5 +1,4 @@
 # Import dependencies
-using GLMdiagnostics
 using Test
 using Distributions
 using Random
@@ -18,7 +17,7 @@ using Compose
 Random.seed!(123)
 
 # Simulate n = 100 data points from a Poisson distribution (lambda = 7)
-y = rand(Poisson(7), 100)
+y = rand(Distributions.Poisson(7), 100)
 
 # Assign grouping variables (5 groups of 20)
 x = repeat([1, 2, 3, 4, 5],

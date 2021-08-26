@@ -1,18 +1,4 @@
-"""
-    calc_resid_deviance(;model, df, y)
-
-Return unstandardised deviance residuals from a fitted linear model.
-
-...
-# Arguments
-- `model`: A fitted linear model object (e.g. general linear model [GLM]).
-- `df`: Dataframe array containing response and predictor variable(s)/covariate(s).
-- `y`: String of column from `df` containing the response variable. 
-...
-
-"""
-
-function calc_resid_deviance(;model, df, y)
+function calc_deviance_resids(;model, df, y)
     
     ###################################################
     # Section #1: Extract response vector and model residuals 
@@ -25,8 +11,8 @@ function calc_resid_deviance(;model, df, y)
     response_y = df[!, y]
 
     ###################################################
-    # Section #2: Calculate unstandardised deviance residuals
-    #             - Requires conditional statements to 
+    # Section #2: Calculate deviance residuals
+    #             - requires conditional statements to 
     #               loop through different data distributions
     ###################################################
 
@@ -35,7 +21,7 @@ function calc_resid_deviance(;model, df, y)
     distType = string.(distType)
 
     # Use if-elseif-else statements to calculate deviance residuals depending
-    # on which error distribution was specified during model specification 
+    # on which errors were specified during model specification 
 
         # If model was specified with Poisson errors
         if distType == "Poisson{Float64}"
@@ -63,7 +49,7 @@ function calc_resid_deviance(;model, df, y)
         # If model was specified with unsupported error distribution (e.g. tweedie)
         else 
             println("ERROR: Unsupported error distribution specified. 
-                    Please refer to ModelCheck.jl documentation for supported error distributions.")
+                    Please refer to GLM.jl documentation for supported error distributions.")
         
         end 
 end
