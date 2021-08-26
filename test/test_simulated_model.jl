@@ -8,6 +8,7 @@ using GLM
 using Gadfly
 using Statistics
 using Compose
+using Measures 
 
 ###########################################
 # - Create simulated data to test functions

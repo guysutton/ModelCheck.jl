@@ -9,7 +9,7 @@
 
 ## 1. Installation
 
-`ModelCheck.jl` is currently unregistered, so it must be installed from GitHub directly, by entering the package manager (by typing `]` into the `Julia` REPL) and then specifying the source URL to this repository:
+`ModelCheck.jl` is currently unregistered so it must be installed from GitHub directly, by entering the package manager (by typing `]` into the `Julia` REPL) and then specifying the source URL to this repository:
 
 ```julia-repl
 julia> ]
