@@ -15,7 +15,7 @@ function plot_qqplot(;model, df, y)
     # Set Gadfly theme  
     default_theme = Gadfly.Theme(
         panel_fill = nothing,
-        #highlight_width = 0,
+        highlight_width = 0Gadfly.pt,
         #point_size = 0.8,
         key_position = :inside,
         #grid_line_width = 0,
