@@ -11,4 +11,4 @@ using SafeTestsets
 #   environments and test sets.
 
 # (1) Test 'calc_resid_deviance' function
- @safetestset "test plot_qq" begin include("test_plot_qq.jl") end
+ @safetestset "test plot_qqplot" begin include("test_plot_qqplot.jl") end

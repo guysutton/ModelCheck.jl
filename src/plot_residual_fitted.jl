@@ -1,7 +1,7 @@
 # Write function to automate plotting residual vs fitted plot
 # - Plots standard residual vs fitted plot for assessing linear model fits
 
-function plot_res_fit(;model, df, y)
+function plot_residual_fitted(;model, df, y)
 
     # Uses an if-else statement to either plot Pearson residuals
     # if the model is fit with a Gaussian/Normal distribution, or 

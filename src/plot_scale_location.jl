@@ -1,7 +1,7 @@
-# Write function to automate plotting qqplot
-# - Plots standard quantile-quantile plot for assessing linear model fits
+# Write function to automate plotting scale-location plot
+# - Plots standard scale-location plot for assessing linear model fits
 
-function plot_qq(;model, df, y)
+function plot_scale_location(;model, df, y)
 
     # Uses an if-else statement to either plot Standardised Pearson residuals
     # if the model is fit with a Gaussian/Normal distribution, or 
@@ -89,6 +89,10 @@ function plot_qq(;model, df, y)
         StdPearsResids = PearsResids ./ (s .* (Base.sqrt.(1 .- dHat)) )
         StdPearsResids = StdPearsResids[:,1]
 
+        # Calculate square root of Std. Pearson residuals 
+        sqrPearResids = sqrt.(complex(StdPearsResids))
+        sqrPearResids = abs.(sqrPearResids)
+
         # Define quantiles
         qx = Distributions.quantile.(Distributions.Normal(),
                                         Base.range(0.5,
@@ -96,24 +100,21 @@ function plot_qq(;model, df, y)
                                                   length = (nResp)) ./ (nResp .+ 1))
 
         ###################################################
-        # - Plot qqplot
+        # - Plot scale-location plot
         ###################################################
 
-        # Create plot
         p = Gadfly.plot(
             # Add points layer
-            Gadfly.layer(x = qx,
-                        y = Base.sort(StdPearsResids),
-                        Gadfly.Geom.point),
-            # Add 1:1 line
-            Gadfly.layer(x = [-3,3],
-                        y = [-3,3],
-                        Gadfly.Geom.line,
-                        Gadfly.style(line_style = [:dot])),
+            x = pred,
+            y = sqrPearResids,
+            Gadfly.layer(Gadfly.Geom.point),
+            Gadfly.layer(Gadfly.Geom.smooth(method = :loess,
+                                            smoothing = 0.9)),
             # Change plot aesthetics
-            Gadfly.Guide.title("Normal Q-Q plot"),
-            Gadfly.Guide.xlabel("Theoretical Quantiles"),
-            Gadfly.Guide.ylabel("Std. Pearson residuals"))
+            Gadfly.Guide.title("Scale-Location"),
+            Gadfly.Guide.xlabel("Predicted values",
+                                orientation=:horizontal),
+            Gadfly.Guide.ylabel("√ Std. Pearson residuals"))
 
         # Return the plot object
         return(p)
@@ -128,6 +129,9 @@ function plot_qq(;model, df, y)
 
         # Use if-elseif-else statements to calculate deviance residuals depending
         # on which error distribution was specified during model specification 
+
+        # Extract fitted/predicted values from model object
+        pred = GLM.predict(model)
 
         # Calculate raw deviance residuals 
         devResids = ModelCheck.calc_deviance_resids(model = model, 
@@ -166,6 +170,10 @@ function plot_qq(;model, df, y)
         StdDevResids = devResids ./ (s * (Base.sqrt.(1 .- dHat)) )
         StdDevResids = StdDevResids[:,1] 
 
+        # Calculate square root of Std. deviance residuals 
+        sqrDevResids = sqrt.(complex(StdDevResids))
+        sqrDevResids = abs.(sqrDevResids)
+
         # Define quantiles
         qx = Distributions.quantile.(Distributions.Normal(),
                                         Base.range(0.5,
@@ -173,25 +181,22 @@ function plot_qq(;model, df, y)
                                         length = (nResids))    
                                     ./ (nResids .+ 1))
                             
-        ###################################################
-        # - Plot qqplot
+         ###################################################
+        # - Plot scale-location plot
         ###################################################
 
-        # Create plot
         p = Gadfly.plot(
-                        # Add points layer
-                        Gadfly.layer(x = qx,
-                                    y = sort(StdDevResids),
-                                    Gadfly.Geom.point),
-                        # Add 1:1 line
-                        Gadfly.layer(x = [-3,3],
-                                    y = [-3,3],
-                                    Gadfly.Geom.line,
-                                    Gadfly.style(line_style = [:dot])),
-                        # Change plot aesthetics
-                        Gadfly.Guide.title("Normal Q-Q plot"),
-                        Gadfly.Guide.xlabel("Theoretical Quantiles"),
-                        Gadfly.Guide.ylabel("Std. deviance residuals"))
+            # Add points layer
+            x = pred,
+            y = sqrDevResids,
+            Gadfly.layer(Gadfly.Geom.point),
+            Gadfly.layer(Gadfly.Geom.smooth(method = :loess,
+                                            smoothing = 0.9)),
+            # Change plot aesthetics
+            Gadfly.Guide.title("Scale-Location"),
+            Gadfly.Guide.xlabel("Predicted values",
+                                orientation=:horizontal),
+            Gadfly.Guide.ylabel("√ Std. deviance residuals"))
 
         # Return the plot object
         return(p)

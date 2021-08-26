@@ -18,11 +18,11 @@ using ModelCheck
 # Import simulated data and general linear model to test functions
 include("test_simulated_model.jl")
 
-@testset "plot_qq" begin
+@testset "plot_qqplot" begin
 
     # Test #1
     # - Test that object created by function is of type 'Plot'
-    @test   typeof(plot_qq(model = modPoisson,
+    @test   typeof(plot_qqplot(model = modPoisson,
                            df = df,
                            y = "y")) == Plot
 
