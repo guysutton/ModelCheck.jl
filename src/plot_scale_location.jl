@@ -112,7 +112,7 @@ function plot_scale_location(;model, df, y)
                                             smoothing = 0.9)),
             # Change plot aesthetics
             Gadfly.Guide.title("Scale-Location"),
-            Gadfly.Guide.xlabel("Predicted values",
+            Gadfly.Guide.xlabel("Fitted values",
                                 orientation=:horizontal),
             Gadfly.Guide.ylabel("√ Std. Pearson residuals"))
 
@@ -194,7 +194,7 @@ function plot_scale_location(;model, df, y)
                                             smoothing = 0.9)),
             # Change plot aesthetics
             Gadfly.Guide.title("Scale-Location"),
-            Gadfly.Guide.xlabel("Predicted values",
+            Gadfly.Guide.xlabel("Fitted values",
                                 orientation=:horizontal),
             Gadfly.Guide.ylabel("√ Std. deviance residuals"))
 

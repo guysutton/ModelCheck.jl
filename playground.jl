@@ -12,3 +12,5 @@ ModelCheck.plot_residual_fitted(model = modPoisson, df = df, y = "y")
 
 # Check scale-location plot works 
 ModelCheck.plot_scale_location(model = modPoisson, df = df, y = "y")
+
+ModelCheck.plot_model_check(model = modPoisson, df = df, y = "y")

@@ -30,4 +30,8 @@ export plot_residual_fitted
 include("plot_scale_location.jl")
 export plot_scale_location
 
+# Function #5: Plot all diagnostics plot
+include("plot_model_check.jl")
+export plot_model_check
+
 end

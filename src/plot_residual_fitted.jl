@@ -77,7 +77,7 @@ function plot_residual_fitted(;model, df, y)
             #             Gadfly.Geom.hline),
             # Change plot aesthetics
             Gadfly.Guide.xlabel("Fitted values", orientation=:horizontal),
-            Gadfly.Guide.ylabel("Residuals"),
+            Gadfly.Guide.ylabel("Pearson residuals"),
             Gadfly.Guide.title("Residuals vs Fitted"))
 
         # Return the plot object
@@ -119,7 +119,7 @@ function plot_residual_fitted(;model, df, y)
             #             Gadfly.Geom.hline),
             # Change plot aesthetics
             Gadfly.Guide.xlabel("Fitted values", orientation=:horizontal),
-            Gadfly.Guide.ylabel("Residuals"),
+            Gadfly.Guide.ylabel("Deviance residuals"),
             Gadfly.Guide.title("Residuals vs Fitted"))
 
         # Return the plot object
