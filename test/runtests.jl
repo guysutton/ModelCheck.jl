@@ -1,15 +1,40 @@
+using Test
 using SafeTestsets
+using ModelCheck
+
+using Distributions
+using Random
+using DataFrames
+using StatsBase
+using GLM
+using Gadfly
+using Statistics
+using Compose
+using Colors
+using SafeTestsets
+
+# Import simulated data and general linear model to test functions
+include("test_simulated_model.jl")
 
 ##############################################
 # - Run unit tests
 ##############################################
 
-# Each function has its own .jl file containing a SafeTestset
-# - Using the 'SafeTestsets' approach requires each test set to run as a
-#   stand alone file (e.g. contains its own Using ... packages code for each function).
-# - SafeTestsets runs each test set in its own clean environment - no leakage between
-#   environments and test sets.
+@testset "ModelCheck Tests" begin
 
-# (1) Test 'calc_resid_deviance' function
- @safetestset "test plot_qqplot" begin include("test_plot_qqplot.jl") end
- @safetestset "test plot_scale_location" begin include("test_plot_scale_location.jl") end
+# Test #1: Test that plot_qq returns an object of type 'Plot'
+@test   typeof(plot_qqplot(model = modPoisson,
+                           df = df,
+                           y = "y")) == Plot
+
+# Test #2: Test that plot_residual_fitted returns an object of type 'Plot'
+@test   typeof(plot_residual_fitted(model = modPoisson,
+                                    df = df,
+                                    y = "y")) == Plot
+
+# Test #3: Test that plot_scale_location returns an object of type 'Plot'
+@test   typeof(plot_scale_location(model = modPoisson,
+                                   df = df,
+                                   y = "y")) == Plot
+
+end

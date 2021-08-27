@@ -117,7 +117,7 @@ function plot_qqplot(;model, df, y)
             Gadfly.Guide.ylabel("Std. Pearson residuals"))
 
         # Return the plot object
-        return(p)
+        #return(p)
 
     # Calculate and plot Standardised deviance residuals if model was
     # fit with a non-Gaussian distribution 
@@ -196,7 +196,7 @@ function plot_qqplot(;model, df, y)
                         Gadfly.Guide.ylabel("Std. deviance residuals"))
 
         # Return the plot object
-        return(p)
+        #return(p)
 
     end # End the if-else statement for Pearson vs Deviance residual plot
 end     # End the entire function
