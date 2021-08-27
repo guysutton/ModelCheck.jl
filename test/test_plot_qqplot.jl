@@ -14,6 +14,7 @@ using Statistics
 using Compose
 using Colors
 using ModelCheck
+using SafeTestsets
 
 # Import simulated data and general linear model to test functions
 include("test_simulated_model.jl")
@@ -23,7 +24,7 @@ include("test_simulated_model.jl")
     # Test #1
     # - Test that object created by function is of type 'Plot'
     @test   typeof(plot_qqplot(model = modPoisson,
-                           df = df,
-                           y = "y")) == Plot
+                               df = df,
+                               y = "y")) == Plot
 
 end # End of testing for plot_qq function

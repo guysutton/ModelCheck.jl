@@ -12,3 +12,4 @@ using SafeTestsets
 
 # (1) Test 'calc_resid_deviance' function
  @safetestset "test plot_qqplot" begin include("test_plot_qqplot.jl") end
+ @safetestset "test plot_scale_location" begin include("test_plot_scale_location.jl") end
