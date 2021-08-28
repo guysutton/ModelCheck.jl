@@ -1,3 +1,16 @@
+"""
+    calc_deviance_resids(;model, df, y)
+
+Return deviance residuals (unstandardised) from a fitted linear model.
+
+...
+# Arguments
+- `model`: Variable containing a fitted linear model (e.g. general linear model [GLM]).
+- `df::DataFrame=df`: DataFrame array containing response and predictor variable(s)/covariates.
+- `y`: Column name from `df` containing the response variable. 
+...
+
+"""
 function calc_deviance_resids(;model, df, y)
     
     ###################################################

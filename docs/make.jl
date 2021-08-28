@@ -4,7 +4,10 @@ using ModelCheck
 makedocs(
     sitename = "ModelCheck",
     format = Documenter.HTML(),
-    modules = [ModelCheck]
+    modules = [ModelCheck],
+    pages = [
+        "Home" => "index.md"
+    ]
 )
 
 # Documenter can also automatically deploy documentation to gh-pages.

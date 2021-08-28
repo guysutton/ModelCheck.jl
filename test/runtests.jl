@@ -1,3 +1,4 @@
+# Import packages
 using Test
 using SafeTestsets
 using ModelCheck
@@ -13,7 +14,7 @@ using Compose
 using Colors
 using SafeTestsets
 
-# Import simulated data and general linear model to test functions
+# Import simulated data and Poisson general linear model to test functions
 include("test_simulated_model.jl")
 
 ##############################################

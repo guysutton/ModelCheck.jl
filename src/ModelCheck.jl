@@ -34,8 +34,4 @@ export plot_scale_location
 include("plot_model_check.jl")
 export plot_model_check
 
-# Function #5: Plot residual vs predictor plot
-include("plot_residual_predictor.jl")
-export plot_residual_predictor
-
 end
