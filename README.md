@@ -2,8 +2,8 @@
 
 [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://guysutton.github.io/ModelCheck.jl/stable)
 [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://guysutton.github.io/ModelCheck.jl/dev)
+[![Run tests](https://github.com/guysutton/ModelCheck.jl/actions/workflows/Runtests.yml/badge.svg)](https://github.com/guysutton/ModelCheck.jl/actions/workflows/Runtests.yml)
 [![Build Status](https://github.com/guysutton/ModelCheck.jl/workflows/CI/badge.svg)](https://github.com/guysutton/ModelCheck.jl/actions)
-[![Coverage](https://codecov.io/gh/guysutton/ModelCheck.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/guysutton/ModelCheck.jl)
 
 `ModelCheck.jl` is a `Julia` package designed to perform model diagnostics for fitted General Linear Models (GLM's). Currently GLM's specificed using `GLM.jl` are supported. 
 
