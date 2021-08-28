@@ -51,7 +51,7 @@ To plot a standard quantile-quantile plot (QQplot), users must pass the model ob
 ```julia
 julia> plot_qqplot(model = m1, df = data, y = "Y")
 ```  
-![](.\images\qqplot_example.png)    
+![](.\docs\src\images\qqplot_example.png)    
     
 #### 2. ModelCheck - Plot residual vs fitted plot
 
@@ -60,7 +60,7 @@ To plot a standard residual vs fitted plot, users must pass the model object to 
 ```julia
 julia> plot_residual_fitted(model = m1, df = data, y = "Y")
 ```  
-![](.\images\residual_fitted_example.png)
+![](.\docs\src\images\residual_fitted_example.png)
     
 #### 3. ModelCheck - Plot scale-location plot  
 
@@ -69,7 +69,7 @@ To plot a standard scale-location plot, users must pass the model object to `mod
 ```julia
 julia> plot_scale_location(model = m1, df = data, y = "Y")
 ```
-![](.\images\scale_location_example.png)
+![](.\docs\src\images\scale_location_example.png)
 
 #### 4. ModelCheck - Plot all model diagnostics plots    
   
@@ -78,5 +78,5 @@ To plot all three of the above plots together, users must pass the model object 
 ```julia
 julia> plot_model_check(model = m1, df = data, y = "Y")
 ```
-![](.\images\model_check_example.png)
+![](.\docs\src\images\model_check_example.png)
 
