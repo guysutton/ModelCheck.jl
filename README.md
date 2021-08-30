@@ -51,7 +51,10 @@ To plot a standard quantile-quantile plot (QQplot), users must pass the model ob
 ```julia
 julia> plot_qqplot(model = m1, df = data, y = "Y")
 ```  
-![](.\docs\src\images\qqplot_example.png)    
+
+<p align="center"> 
+<img src="https://github.com/guysutton/ModelCheck.jl/blob/main/docs/src/images/qqplot_example.png" align="center" width="550" height="400">
+</p>  
     
 #### 2. ModelCheck - Plot residual vs fitted plot
 
@@ -60,8 +63,11 @@ To plot a standard residual vs fitted plot, users must pass the model object to 
 ```julia
 julia> plot_residual_fitted(model = m1, df = data, y = "Y")
 ```  
-![](.\docs\src\images\residual_fitted_example.png)
-    
+
+<p align="center"> 
+<img src="https://github.com/guysutton/ModelCheck.jl/blob/main/docs/src/images/residual_fitted_example.png" align="center" width="550" height="400">
+</p>
+
 #### 3. ModelCheck - Plot scale-location plot  
 
 To plot a standard scale-location plot, users must pass the model object to `model`, the name of the DataFrame containing the predictor(s)/covariates(s) to `df`, and the name of the column in `df` containing the predictor variable. 
@@ -69,7 +75,10 @@ To plot a standard scale-location plot, users must pass the model object to `mod
 ```julia
 julia> plot_scale_location(model = m1, df = data, y = "Y")
 ```
-![](.\docs\src\images\scale_location_example.png)
+
+<p align="center"> 
+<img src="https://github.com/guysutton/ModelCheck.jl/blob/main/docs/src/images/scale_location_example.png" align="center" width="550" height="400">
+</p>
 
 #### 4. ModelCheck - Plot all model diagnostics plots    
   
@@ -78,5 +87,8 @@ To plot all three of the above plots together, users must pass the model object 
 ```julia
 julia> plot_model_check(model = m1, df = data, y = "Y")
 ```
-![](.\docs\src\images\model_check_example.png)
+
+<p align="center"> 
+<img src="https://github.com/guysutton/ModelCheck.jl/blob/main/docs/src/images/model_check_example.png" align="center" width="550" height="400">
+</p>
 
