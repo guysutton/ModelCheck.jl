@@ -65,7 +65,7 @@ julia> plot_residual_fitted(model = m1, df = data, y = "Y")
 ```  
 
 <p align="center"> 
-<img src="https://github.com/guysutton/ModelCheck.jl/blob/main/docs/src/images/residual_fitted_example.png" align="center" width="550" height="400">
+<img src="https://github.com/guysutton/ModelCheck.jl/blob/main/docs/src/images/residual_fitted_example.png" align="center">
 </p>
 
 #### 3. ModelCheck - Plot scale-location plot  
@@ -77,7 +77,7 @@ julia> plot_scale_location(model = m1, df = data, y = "Y")
 ```
 
 <p align="center"> 
-<img src="https://github.com/guysutton/ModelCheck.jl/blob/main/docs/src/images/scale_location_example.png" align="center" width="550" height="400">
+<img src="https://github.com/guysutton/ModelCheck.jl/blob/main/docs/src/images/scale_location_example.png" align="center">
 </p>
 
 #### 4. ModelCheck - Plot all model diagnostics plots    
@@ -89,6 +89,6 @@ julia> plot_model_check(model = m1, df = data, y = "Y")
 ```
 
 <p align="center"> 
-<img src="https://github.com/guysutton/ModelCheck.jl/blob/main/docs/src/images/model_check_example.png" align="center" width="550" height="400">
+<img src="https://github.com/guysutton/ModelCheck.jl/blob/main/docs/src/images/model_check_example.png" align="center">
 </p>
 
