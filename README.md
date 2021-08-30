@@ -53,7 +53,7 @@ julia> plot_qqplot(model = m1, df = data, y = "Y")
 ```  
 
 <p align="center"> 
-<img src="https://github.com/guysutton/ModelCheck.jl/blob/main/docs/src/images/qqplot_example.png" align="center" width="550" height="400">
+<img src="https://github.com/guysutton/ModelCheck.jl/blob/main/docs/src/images/qqplot_example.png" align="center">
 </p>  
     
 #### 2. ModelCheck - Plot residual vs fitted plot
